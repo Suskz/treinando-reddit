@@ -1,0 +1,21 @@
+Produto: Reddit
+
+Funcionalidade: login
+    Para que eu possa comentar e usar todas as funcionalidades
+    Sendo um usuário
+    Posso acessar o sistema com meu usuario e senha previamente cadastrados
+
+Contexto: Página principal
+    Dado que eu acesso a página de login
+    Quando faço o login com "usernamevalido" e "senhavalida"
+    Entao devo ser redirecionado para a pagina anterior
+
+Cenario: Login invalido
+    Dado que eu acesso a página principal
+    Quando faço o login com "usernameinvalido" e "senhavalida"
+    Entao devo ver a seguinte mensagem "Incorrect username or password"
+
+Cenario: Senha invalida
+    Dado que eu acesso a página principal
+    Quando faço o login com "usernamevalido" e "senhainvalida"
+    Entao devo ver a seguinte mensagem "Incorrect username or password"
