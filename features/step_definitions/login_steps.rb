@@ -3,15 +3,14 @@ Dado('que eu acesso a página de login') do
   end
   
   Quando('faço o login com {string} e {string}') do |username, senha|
-    find('#loginUsername').set username
-    find('#loginPassword').set senha
-    click_button 'Log In'
+    Login_Page.new.faz_login(username, senha)
   end
   
   Entao('devo ser redirecionado para a pagina inicial') do
     visit 'https://www.reddit.com/'
   end
   
-  Entao('devo ver a seguinte mensagem {string}') do |mensagem|
-    expect(page).to have_content mensagem
+  Entao('devo ver a seguinte mensagem {string}') do |alerta|
+    @alerta = alerta
+    expect(page).to have_content @alerta
   end
